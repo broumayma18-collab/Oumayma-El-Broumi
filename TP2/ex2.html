@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+<button id="mas" type="button" onclick="Masquer()">Masquer</button></div>
+<p id="text">
+Afficher/Masquer le texte :
+    Ajouter un bouton qui masque et affiche un paragraphe de texte en cliquant dessus. 
+    Alterner entre les états "Afficher" et "Masquer". </p>
+
+</div>
+
+</form>
+<style>
+    #text{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:20px ;
+        font-weight: bold;
+        background-color: lightpink;
+        width: 500px;
+        height: 100px;
+        
+    }
+    #mas{
+        width: 100px;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+</style>
+<script>
+
+function Masquer(){
+   let Texte= document.getElementById('text');
+   let button=document.getElementById('mas');
+
+   if(Texte.style.display=="none"){
+    Texte.style.display="block";
+    button.innerHTML="Masquer";
+   }
+   else{
+    Texte.style.display="none";
+    button.innerHTML="Afficher";
+   }
+}
+
+
+</script>
+
+</body>
+</html>

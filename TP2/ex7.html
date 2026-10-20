@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+      <h1>Temps écoulé : <span id="timer">0</span> secondes</h1>
+
+    <script>
+        
+        let secondes = 0;
+        setInterval(function() {
+
+            secondes++;
+            
+            document.getElementById("timer").innerText = secondes;
+        }, 1000);
+    </script>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            border: solid 2px black;
+        }
+        h1 {
+            color: #333;
+        }
+        #timer {
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+            border: solid 3px black;
+        }
+    </style>
+</body>
+</html>

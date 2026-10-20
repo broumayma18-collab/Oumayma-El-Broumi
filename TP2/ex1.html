@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>CHANGER COULEUR</title>
+     <style>
+        body{
+            background-color: blue;
+        }
+        #box{
+           background-color:lightblue;
+           width:500px;
+           height: 200px;
+           transition: background-color 0.4;
+           font-size: 25px;
+           border: SOLID 5PX;
+           border-radius: 20PX;
+           display: flex;
+           text-align: center;
+           font-weight: bold;
+         
+           
+        }
+        button{Z
+        display: flex;
+            padding: 10px 20px;
+            font-size: 20Px;
+            cursor: pointer;
+            text-align: center;
+           align-items: center;
+            color: black;
+            font-style: italic;
+            font-weight: bold;
+            width: 300px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    <form>
+   <button id="changer" type="button" onclick="changerCouleur()">changer la couleur de fond</button>
+   <br>
+   <br>
+   <div id="box">
+    1. Changer de style au clic :
+     Créer un bouton qui change la couleur de fond d'une div en cliquant dessus.
+     Utiliser JavaScript pour manipuler le style CSS de la div. 
+   </div>
+   </div>
+    </form>
+    <script>
+        var isBrown=false;
+
+        function changerCouleur(){
+           var boxdiv= document.getElementById('box');
+           if(isBrown===false){
+            boxdiv.style.backgroundColor="brown";
+            isBrown=true;
+           }
+           else{
+            boxdiv.style.backgroundColor="lightblue";
+            isBrown=false;
+            
+           }
+
+        }
+</script>
+</body>
+
+

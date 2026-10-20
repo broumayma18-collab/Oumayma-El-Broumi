@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Carousel d'image</title>
+</head>
+<body>
+     <div class="carousel-container">
+    
+        <img id="imageCarousel" src="" alt="Image du carousel">
+        
+        <div class="btn">
+            <button onclick="precedente()">Précédent</button>
+            <button onclick="suivante()">Suivant</button>
+        </div>
+    </div>
+
+ </div>
+ <style>
+  #imageCarousel {
+            width: 500px;
+            height: 600px;
+            object-fit: cover; 
+            border-radius: 5px;
+            border: 2px solid #333;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 400PX;
+            
+  }
+  .btn{
+    display: flex;
+            padding: 10px 20px;
+            font-size: 25px;
+            cursor: pointer;
+           align-items: center;
+            color: white;
+           
+            width: 400px;
+    
+            border-radius: 5px;
+            transition: background-color 0.3s;
+
+        
+  }
+  button{
+    width:300PX;
+    height: 100X;
+    justify-content: space-between;
+    
+  }
+            </style>
+ <script>
+    let imageElement=document.getElementById('imageCarousel');
+    let images=[
+       "image.jpeg",
+       "image2.jpeg",
+       "image3.jpeg",
+       "image4.jpeg",
+
+    ];
+    let index=0;
+    imageElement.src=images[index];
+
+    function suivante(){
+        index ++;
+        if(index>=images.length){
+            index=0;
+        }
+         
+        imageElement.src=images[index];
+       }
+    
+    function precedente(){
+       index--;
+       if(index<0){
+        index=image.length-1;
+       } 
+       
+        imageElement.src=images[index];
+       
+    }
+
+
+ </script>
+
+    
+</body>
+</html>

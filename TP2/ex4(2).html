@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Calculatrice</title>
+</head>
+<body>
+  
+
+    <div class="calc">
+        
+        <input type="text" id="ecran" disabled>
+
+        <div class="boutons">
+            
+            <button onclick="effacer()">C</button>
+            <button onclick="retour()">⌫</button>
+            <button onclick="ajouter('/')">/</button>
+            <button onclick="ajouter('*')">*</button>
+<br>
+        
+            <button onclick="ajouter('7')">7</button>
+            <button onclick="ajouter('8')">8</button>
+            <button onclick="ajouter('9')">9</button>
+            <button onclick="ajouter('-')">-</button>
+
+            
+            <button onclick="ajouter('4')">4</button>
+            <button onclick="ajouter('5')">5</button>
+            <button onclick="ajouter('6')">6</button>
+            <button onclick="ajouter('+')">+</button>
+
+            
+            <button onclick="ajouter('1')">1</button>
+            <button onclick="ajouter('2')">2</button>
+            <button onclick="ajouter('3')">3</button>
+            <button class="egal" onclick="calculer()">=</button>
+
+            
+            <button class="zero" onclick="ajouter('0')">0</button>
+            <button onclick="ajouter('.')">.</button>
+        </div>
+    </div>
+    <style>
+      
+        
+        body{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    .calc {
+            background-color: lightpink;
+            padding: 20px;
+            border-radius: 10px;
+            height: 500PX;
+            width: 400px;
+            
+            margin-left: 20PX;
+            border: 1px solid #999;
+    }
+
+#ecran {
+            width: 400PX;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 15px;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background-color: whitesmoke;
+            border-radius: 5px;
+        }
+        .boutons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+            height:70px ;
+        }
+        .zero {
+            grid-column: span 2;
+        }
+        .egal {
+            background-color: #007BFF;
+            color: white;
+        }
+
+            </style>
+            <script>
+                ECRAN=document.getElementById("ecran");
+                
+                function ajouter(valeur){
+                    ECRAN.value+=valeur;
+                }
+
+                 function effacer() {
+            ECRAN.value = "";
+        }
+        function retour() {
+            ECRAN.value = ECRAN.value.slice(0, -1);
+        }
+        function calculer() {
+            try {
+        
+                let resultat = eval(ECRAN.value);
+                if (!isFinite(resultat)) {
+                    ECRAN.value = "Erreur";
+                } else {
+                    ECRAN.value = resultat;
+                }
+            } catch (error) {
+                
+                ECRAN.value = "Erreur";
+            }
+        }
+            </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+<script>
+let email=prompt('saisir votre email');
+
+let Arobase=email.indexOf('@');
+
+let Point=email.indexOf('.');
+
+//Verification de @ et point
+if(Arobase > 0 && Point > Arobase+1 ){
+    console.log("Email est validé");
+}
+else{
+    console.log("Email n'est pas validé");
+}
+</script>
+

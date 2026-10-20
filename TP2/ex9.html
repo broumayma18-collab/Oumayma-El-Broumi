@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Ma To-Do List</h2>
+        
+        <input type="text" id="tacheInput" placeholder="Ajouter une tâche...">
+        <button onclick="ajouterTache()">Ajouter</button>
+
+    
+        <ul id="maListe"></ul>
+    </div>
+
+    <script>
+        
+        let input = document.getElementById("tacheInput");
+        let liste = document.getElementById("maListe");
+
+    
+        function ajouterTache() {
+            
+            let texte = input.value.trim();
+
+            
+            if (texte === "") {
+                alert("saisir quelque chose s'il vous plait");
+                return;
+            }
+
+            
+            let li = document.createElement("li");
+            
+            
+            li.innerText = texte;
+
+            let btnSuppr = document.createElement("button");
+            btnSuppr.innerText = "Supprimer";
+            btnSuppr.className = "supprimer"; 
+            
+            
+            btnSuppr.onclick = function() {
+                li.remove();
+            };
+
+            
+            li.appendChild(btnSuppr);
+
+            
+            liste.appendChild(li);
+
+            
+            input.value = "";
+        }
+    </script>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+            background-color: bisque;
+        }
+
+        .container {
+            width: 350px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input {
+            padding: 8px;
+            width: 200px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .supprimer {
+            background-color: #e74c3c;
+        }
+    </style>
+
+</body>
+</html>

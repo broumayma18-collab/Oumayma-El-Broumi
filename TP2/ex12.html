@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+</head>
+<body>
+    <h2>Responsive avec JavaScript</h2>
+    <p>Si vous réduissez l'ecran la couleur de div des boutons va etre RED !</p>
+
+    
+    <div class="container" id="monContainer">
+        <button class="btn">Bouton 1</button>
+        <button class="btn">Bouton 2</button>
+        <button class="btn">Bouton 3</button>
+        <button class="btn">Bouton 4</button>
+        <button class="btn">Bouton 5</button>
+        <button class="btn">Bouton 6</button>
+    </div>
+
+    <script>
+        
+        let container=document.getElementById("monContainer");
+
+        function checkScreen(){
+            if(window.innerWidth < 600){
+                container.classList.add("petit");
+            }
+            else{
+                container.classList.remove("petit");
+            }
+        }
+        checkScreen();
+
+        window.addEventListener("resize",checkScreen);
+    </script>
+    <style>
+        body {
+            background-color: lightslategrey;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; 
+            flex-wrap: wrap; 
+        }
+
+      
+        .btn {
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 400PX;
+        }
+
+        
+        .petit {
+            background-color: red;
+        }
+    </style>
+
+</body>
+</html>
+    

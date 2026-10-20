@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<body>
+    <div id="box">
+    <h1>Barre de progression</h1>
+    <form>
+        <div>
+        <div class="container">
+            <div id="barr"></div>
+        </div>
+        <div id="btn">
+        <button type="button" onclick="démarrer()">Démarrer la progression!</button>
+    </div>
+    </form>
+    </div>
+<script>
+    function démarrer(){
+        let barre=document.getElementById("barr");
+        let larg=0;
+        barre.style.width= "0%"; 
+
+        let interval=setInterval(function(){
+            if(larg>=100){
+                clearInterval(interval);
+            }
+            else{
+                larg++;
+                barre.style.width=larg+"%";
+            }
+        },50);
+        
+    }
+    
+    
+</script>
+<style>
+    #box{
+        border: solid black;
+        background-color: pink;
+        border-radius: 400PX;
+
+    }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: blue;
+        }
+
+        
+        .container {
+            width: 80%;
+            max-width: 500px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            margin: 20px auto;
+            overflow: hidden; 
+        }
+
+    
+        #barr{
+            width: 0%; 
+            height: 100%;
+            background-color: black;
+            border-radius: 15px;
+            transition: width 0.1s; 
+        }
+
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: lightskyblue;
+            color: black;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+
+
+
+
+</body>
+</html>

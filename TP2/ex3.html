@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>formulaire</title>
+</head>
+<body>
+    <style>
+        .container{
+            background-color: blanchedalmond;
+            border: solid 3px black;
+            width:300px;
+            height: 300PX;
+            font-size: 25px;
+            font-weight: bold;
+        
+        }
+        button{
+            font-size: 20px ;
+            font-weight: bolder;
+            font-style: italic;
+            margin-left: 90PX;
+
+        }
+
+    </style>
+    <div class="container">
+
+ <form >
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" placeholder="saisir votre nom ici"required>
+            <br>
+             <br>
+              
+            <label for="email">Email :</label>
+            <input type="text" id="email" placeholder="Saisir votre email ici"required>
+<br>
+<br>
+            <button type="submit"onclick="validerForm()">Soumettre</button>
+        </form>
+    <script>
+        function validerForm(){
+         let N=document.getElementById('nom').value;
+         let E=document.getElementById('email').value;
+
+         if(N.trim()===""|| E.trim()===""){
+           alert("Remplir les champs!!!");
+           return false;
+         }
+         else{
+            alert("la formulaire est envoyée.\nNom: " + N+ "\nEmail: " + E);
+            return true;
+         }
+
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

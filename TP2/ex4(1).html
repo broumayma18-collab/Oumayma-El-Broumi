@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4 - Calculatrice Simple</title>
+    <style>
+         body { font-family: Arial; margin: 50px; 
+            text-align: center;
+         }
+        .box{
+            display:inline-block;
+            border: solid 5px black;
+            border-radius: 8px;
+            width: 400PX;
+            height: 300PX;
+            background-color: lightblue;
+        }
+      #resultat{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 20PX;
+        color: blue;
+        
+        width: 70PX;
+        margin-left: 100PX;
+      }
+      h2{
+        color: blue;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+        border: solid ;
+        border-radius: 1px;
+      }
+      #num1{
+        font-weight: bold;
+        font-size: 20PX;
+      }
+      #num2{
+        font-weight: bold;
+        font-size: 20PX;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Calculatrice </h2>
+        <input type="number" id="num1" placeholder="nombre1">
+        <br>
+        <input type="number" id="num2" placeholder="nombre2">
+        <br>
+        <br>
+          <button onclick="calculer('+')">+</button>
+        <button onclick="calculer('-')">-</button>
+           <button onclick="calculer('*')">*</button>
+        <button onclick="calculer('/')">/</button>
+<br> 
+        <br>
+        <div id="resultat">Résultat:</div>
+    </div>
+
+    <script>
+        function calculer(operation) {
+            let n1 = Number(document.getElementById("num1").value);
+            let n2 = Number(document.getElementById("num2").value);
+            let  res = 0
+
+            if (operation === '+') {
+                res = n1 + n2;
+            } else if (operation === '-') {
+                res = n1 - n2;
+            } else if (operation === '*') {
+                res = n1 * n2;
+            } else if (operation === '/') {
+                
+                if (n2 === 0) {
+                    res = "Erreur!";
+                } else {
+                    res = n1 / n2;
+                }
+            }
+            document.getElementById("resultat").innerHTML = "Résultat : " + res;
+        }
+    </script>
+
+</body>
+</html>

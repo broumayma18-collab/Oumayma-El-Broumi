@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>QCM</title>
+</head>
+<body>
+<div class="qcm">
+    <h1>Questionnaire à Choix Multiples (QCM)</h1>
+    
+    <form id="qcmForm">
+        
+        <div class="question">
+            <p><strong>1. Quel langage est utilisé pour styliser les pages web ? (Choix simple)</strong></p>
+            <label><input type="radio" name="q1" value="A"> A) HTML</label><br>
+            <label><input type="radio" name="q1" value="B"> B) CSS</label><br>
+            <label><input type="radio" name="q1" value="C"> C) JavaScript</label>
+        </div>
+
+        <div class="question">
+            <p><strong> 2.Comment déclarer un variable dans javascript</strong></p>
+             <label><input type="radio" name="q2" value="A">A)variable x </label><br>
+             <label><input type="radio" name="q2"value="B"> B)let x </label><br>
+              <label><input type="radio" name="q2" value="C"> C)v x </label><br>
+        <!-- Question 3 : Choix multiple -->
+        <div class="question">
+            <p><strong>3. Lesquels de ces langages sont des langages de programmation web ? (Choix multiple)</strong></p>
+            <label><input type="checkbox" name="q3" value="A"> A) JavaScript</label><br>
+            <label><input type="checkbox" name="q3" value="B"> B) HTML</label><br>
+            <label><input type="checkbox" name="q3" value="C"> C) Python (côté serveur)</label>
+        </div>
+
+        
+        <div class="question">
+            <p><strong>4. Quels sélecteurs existent en CSS ? (Choix multiple)</strong></p>
+            <label><input type="checkbox" name="q4" value="A"> A) Sélecteur d'élément</label><br>
+            <label><input type="checkbox" name="q4" value="B"> B) Sélecteur de classe</label><br>
+            <label><input type="checkbox" name="q4" value="C"> C) Sélecteur d'ID</label>
+        </div>
+
+
+        <div class="question">
+            <p><strong>5. Quelles méthodes JavaScript permettent de sélectionner un élément du DOM ? (Choix multiple)</strong></p>
+            <label><input type="checkbox" name="q5" value="A"> A) getElementById</label><br>
+            <label><input type="checkbox" name="q5" value="B"> B) querySelector</label><br>
+            <label><input type="checkbox" name="q5" value="C"> C) selectElementByMagic</label>
+        </div>
+
+        <br>
+        
+        <button type="button" onclick="initialiserQCM()">Initialiser</button>
+        <button type="button" onclick="afficherCorrige()">Afficher le Corrigé</button>
+        <button type="button" onclick="afficherResultat()">Afficher le Résultat</button>
+
+    </form>
+    </div>
+    <style>
+        body{
+            background-color: blue;
+        }
+        .qcm{
+            margin-left: 400px;
+            background: linear-gradient(135dg,#ffffff 0%,#e0f7fa 100%);
+            min-height: 100vh;
+            
+            font-family: Arial, sans-serif;
+             background-color: lightblue;
+            border-top-right-radius: 30%;
+             border-bottom-right-radius: 30%;
+             border-top-left-radius: 30px;
+             border-bottom-left-radius: 30%;
+             width: 900px;
+        }
+       
+        p{
+            color:blue ;
+            
+            font-style: italic;
+            
+        }
+     .question{
+        color: black;
+        margin-left: 10%;
+
+     }
+     h1{
+        border-radius: 20px;
+        font-size: 30px;
+        border: solid black 2px;
+        background-color: aqua;
+        width: 600px;
+
+     }
+     button{
+        border:solid black 2px;
+        background-color: aqua;
+        margin-left: 10%;
+        width: 100px;
+        font-size: 15px;
+        font-style: italic;
+        font-weight: bold;
+     }
+
+
+
+    </style>
+
+    <script src="main.js"></script>
+</body>
+</html>

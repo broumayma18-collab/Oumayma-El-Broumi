@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evenemet de souris</title>
+</head>
+<body>
+    <h1>passer la souris</h1>
+    <div id="Box">Passer la souris ici </div>
+
+    <script>
+        let mbox=document.getElementById('Box');
+        function colorIn(){
+            mbox.style.backgroundColor="red";
+
+        }
+        function colorOut(){
+            mbox.style.backgroundColor="blue";
+        }
+        mbox.addEventListener("mouseover",colorIn);
+        mbox.addEventListener("mouseout",colorOut);
+    </script>
+    <style>
+        #Box {
+            width: 300px;
+            height: 200px;
+            background-color: blue; 
+            color: white;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: 0.3s; 
+        }
+         body { 
+            background-color: lightgreen;
+            text-align: center; margin-top: 100px; font-family: Arial; }
+
+    </style>
+</body>
+</html>

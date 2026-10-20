@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 50px;
+        }
+
+        .menu-container {
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+
+        .menu-titre {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            cursor: pointer; 
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+        }
+
+    
+        .menu-contenu {
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.5s ease-out;
+            background-color: #fff;
+        }
+
+        
+        .menu-contenu.ouvert {
+            max-height: 200px; 
+        }
+
+        
+        .menu-contenu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-contenu ul li a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-contenu ul li a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        
+        <div class="menu-titre" onclick="toggleMenu()">
+            Menu Principal ▼
+        </div>
+
+    
+        <div class="menu-contenu" id="monMenu">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Paramètres</a></li>
+                <li><a href="#">Déconnexion</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            
+            var menu = document.getElementById("monMenu");
+
+           
+            menu.classList.toggle("ouvert");
+        }
+    </script>
+
+</body>
+
+
+</body>
+</html>

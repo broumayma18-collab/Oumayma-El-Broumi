@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODAL</title>
+</head>
+<body>
+    <div class="modal" id="mo">
+        <div class="box">
+            <h2>Notifications</h1>
+           <p>Cette modale fonctionne Bien , vous pouvez la fermer!!</p>
+
+            </div>
+        <button id="ouvre" onclick="ouvrir()">Ouvrir</button>
+        <button id="ferm"   onclick="fermer()">Fermer</button>
+
+    </div>
+    <script>
+let modal=document.getElementById("mo");
+
+function ouvrir(){
+    modal.style.display="block";
+
+}
+function fermer(){
+    modal.style.display="none";
+}
+    </script>
+    <style>
+        body{
+            background-color: lightskyblue;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #mo{
+            position: absolute;
+        
+            text-align: center;
+            width: 600px;
+            padding:70PX;
+            border: solid black;
+            border-radius: 8PX;
+            background-color: beige;
+        }
+        #ouvre{
+        
+            font-style: italic;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #ferm{
+         font-style: italic;
+            font-weight: bold;
+            font-size: 20px;
+    }
+    h2{
+        color: blue;
+        border: solid black;
+    }
+        
+    </style>
+    
+</body>
+</html>

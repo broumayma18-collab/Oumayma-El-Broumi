@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+</head>
+<body>
+    <h2>Liste de produits</h2>
+    <input type="text" id="rech" placeholder="Rechercher un produit..." onkeyup="search()">
+
+    <form>
+        <table>
+            <thead>
+            <tr>
+                <th>Produits</th>
+            </tr>
+            </thead>
+           
+           
+ <tbody  id="liste">
+<tr>
+    <td>Ordinateur portable</td>
+    
+</tr>
+<tr>
+    <td>Smart phone</td>
+</tr>
+<tr>
+    <td>Casque audio </td>
+</tr>
+<tr>
+    <td>Ecran LED</td>
+</tr>
+<tr>
+    <td>Clavier Mécanique</td>
+</tr>
+<tr>
+    <td>Souris sans fil</td>
+</tr>
+</table>
+</tbody>
+    </form>
+    <style>
+        h2{
+            color: blue;
+            font-size: 30px;
+            border-radius: 8PX;
+            
+            font-style: italic;
+            font-weight: bold;
+           
+        }
+        body {
+    font-family: Arial, sans-serif;
+    background-color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+#rech {
+    padding: 10px 15px;
+    width: 300px;
+    border: 2px solid blue;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+table {
+    width: 400px;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: blue;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+tr:hover td {
+    background-color: #f1f1f1;
+}
+
+
+
+    </style>
+
+<script>
+    function search(){
+let recherche=document.getElementById("rech").value.toLowerCase();
+let line=document.getElementById("liste").getElementsByTagName("tr");
+ 
+
+    for(let i=0 ; i < line.length; i++){
+        let nom=line[i].getElementsByTagName("td")[0].innerText.toLowerCase();
+        if(nom.includes(recherche)){
+            line[i].style.display="";
+        }
+        else{
+            line[i].style.display="none";
+        }
+
+    }
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

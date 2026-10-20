@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODE</title>
+</head>
+<body id="Mode">
+    <style>
+       
+        #Mode{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+              display: flex;
+            align-items: center;
+        }
+        h1{
+            color: black;
+            font-style: italic;
+        }
+        button{
+           
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: lightskyblue;
+            color: black;
+            border: none;
+            border-radius: 5px;
+        }
+        
+    </style>
+    <div >
+    <h2 id="titre">Basculer entre Thème clair et sombre:</h2>
+    <div>
+        <button id="c" onclick="clair()">Activer le thème Clair</button>
+        <button id="s" onclick="sombre()">Activer le thème Sombre</button>
+    </div>
+    </div>
+    <script>
+       
+         let mode=document.getElementById("Mode");
+         let H1=document.getElementById("titre");
+        function clair(){
+            
+               mode.style.backgroundColor="white";
+               H1.style.color="black";
+
+        }
+        function sombre(){
+           
+               mode.style.backgroundColor="black";
+               H1.style.color="white";
+               
+
+        }
+mode.addEventListener( "onclick" ,clair);
+mode.addEventListener("onclick" , sombre);
+
+    </script>
+</body>
+</html>

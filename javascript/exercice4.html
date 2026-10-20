@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temps/title>
+</head>
+<body>
+
+    <form>
+<div id="temps">
+    <p>__Entrer le premier temps:</p>
+    Heure<input type="number" id="h1">
+    minute<input type="number" id="m1"> 
+    Second<input type="number" id="s1">
+    
+    <p>__Entrer le deuxieme temps:</p>
+    Heure<input type="number" id="h2">
+    minute<input type="number" id="m2">
+    Second <input type="number" id="s2">
+    
+    <p>__Entrer le troisime temps:</p>
+     Heure <input type="number" id="h3">
+   minute <input type="number" id="m3">
+    Second <input type="number" id="s3">
+
+    <p class="tot">--le totale des trois temps:</p>
+    <label>jour(s)</label><input type="text" id="J">
+    <label>Heure(s)</label><input type="text" id="H">
+    <label>Minute(s)</label><input type="text" id="M">
+    <label>Seconde(s)</label></labelSeconde><input type="text" id="S">
+<br>
+      <br>
+    <button id="somme" type="button" onclick="calculerSomme()">Somme</button>
+    <button id="efface" type="button" onclick="effacer()">Effacer</button>
+    
+</div>
+<div>
+    </form>
+    <style>
+        #temps{
+            background-color: lightblue;
+           border-radius: 10px;
+           border:solid 8px;
+            width: 990px;
+            margin-left: 20%;
+            
+        }
+        p{
+            font-weight: bold;
+            font-size: 20px;
+            font-style: italic;
+            margin-left: 20px;
+        
+        }
+         button{
+            width:100px;
+            margin-left: 20%;
+            color: blue;
+         }
+    </style>
+    <script>
+        function calculerSomme(){
+        let h1=Number(document.getElementById('h1').value);
+        let m1=Number(document.getElementById('m1').value);
+        let s1=Number(document.getElementById('s1').value);
+
+         let h2=Number(document.getElementById('h2').value);
+        let m2=Number(document.getElementById('m2').value);
+        let s2=Number(document.getElementById('s2').value);
+
+         let h3=Number(document.getElementById('h3').value);
+        let m3=Number(document.getElementById('m3').value);
+        let s3=Number(document.getElementById('s3').value);
+
+        let totH= h1+h2+h3;
+        let totM= m1+m2+m3;
+        let totS=s1+s2+s3;
+
+        let SommeSeconde= (totH*3600)+(totM*60)+totS;
+        
+
+        let seconde=SommeSeconde % 60;
+        let MINUTE=Math.floor(SommeSeconde / 60);
+
+        let minute=MINUTE % 60;
+        let HEURE= Math.floor(MINUTE / 60);
+
+        let heure=HEURE % 24;
+        let jour=Math.floor(HEURE / 24);
+
+        
+
+    document.getElementById('S').value=seconde;
+    document.getElementById('M').value=minute;
+    document.getElementById('H').value=heure;
+    document.getElementById('J').value=jour;
+
+        }
+        
+            function effacer() {
+            document.getElementById('h1').value = '';
+            document.getElementById('m1').value = '';
+            document.getElementById('s1').value = '';
+            document.getElementById('h2').value = '';
+            document.getElementById('m2').value = '';
+            document.getElementById('s2').value = '';
+            document.getElementById('h3').value = '';
+            document.getElementById('m3').value = '';
+            document.getElementById('s3').value = '';
+            document.getElementById('j').value = '';
+            document.getElementById('H').value = '';
+            document.getElementById('M').value = '';
+            document.getElementById('S').value = '';
+        }
+        
+    </script>
+
+    
+</body>
+</html>

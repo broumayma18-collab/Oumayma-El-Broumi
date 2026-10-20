@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Drag and Drop Example</h2>
+
+    <div class="container">
+        
+        <div class="box" id="box1" ondrop="deposer(event)" ondragover="Drop(event)">
+            <h3>À déplacer</h3>
+        
+            <div class="item" id="item1" draggable="true" ondragstart="Drag(event)">Élément 1</div>
+            <div class="item" id="item2" draggable="true" ondragstart="Drag(event)">Élément 2</div>
+            <div class="item" id="item3" draggable="true" ondragstart="Drag(event)">Élément 3</div>
+        </div>
+
+       
+        <div class="box" id="box2" ondrop="deposer(event)" ondragover="autoriserDrop(event)">
+            <h3>Déposer ici</h3>
+        </div>
+    </div>
+
+    <script>
+        
+        function Drag(event) {
+            
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        
+        function autoriserDrop(event) {
+            event.preventDefault(); 
+        }
+
+        
+        function deposer(event) {
+            event.preventDefault();
+            
+        
+            let idItem = event.dataTransfer.getData("text");
+            
+            
+            let item = document.getElementById(idItem);
+            
+        
+            let box = event.target;
+
+            
+            if (box.className === "box") {
+                box.appendChild(item); 
+            }
+        }
+    </script>
+    <style>
+        h2{
+            font-size: 40PX;
+            font-weight: bold;
+            font-style: italic;
+        }
+    body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: lightgoldenrodyellow;
+        }
+
+    
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .box {
+            width: 200px;
+            height: 250px;
+            border: 2px dashed #999; 
+            border-radius: 10px;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        
+        .item {
+            background-color: brown; 
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: grab; 
+            width: 80%;
+        }
+
+        .item:active {
+            cursor: grabbing; 
+        }
+    </style>
+
+</body>
+</html>
