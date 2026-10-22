@@ -1,0 +1,96 @@
+#all{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+body {
+    background-color: bisque; 
+    font-family: 'Poppins', sans-serif;
+    color: #3A2A2E;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+.nav-link {
+    color: #3A2A2E !important;
+    transition: color 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: #C96A7B !important;
+}
+
+
+.hero {
+    background: linear-gradient(135deg, #FFF9F5 0%, #FBE9EB 100%);
+    min-height: 100vh;
+}
+
+.hero-img {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+    border: 10px solid #fff;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+
+.btn-custom {
+    background-color: #C96A7B;
+    color: white;
+    border-radius: 50px;
+    font-weight: 500;
+    border: 2px solid #C96A7B;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201, 106, 123, 0.3);
+}
+
+.btn-custom:hover {
+    background-color: transparent;
+    color: #C96A7B;
+   
+}
+
+
+.custom-card {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#title{
+    font-size: 400px;
+}
+
+
+.product-img {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+.btn-hover-effect {
+    transition: all 0.3s ease;
+}
+.btn-hover-effect:hover {
+    background-color: #3A2A2E;
+    color: white;
+    border-color: #3A2A2E;
+}
+#box{
+    width: 40PX;
+}
+
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(201, 106, 123, 0.25);
+    border-color: #C96A7B;
+}
+#im{
+    border-radius: 1000PX;
+}
+p{
+    font-size: 20PX;
+    font-style: italic;
+}
